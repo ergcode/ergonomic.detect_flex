@@ -14,10 +14,11 @@ ______________________________________________________________________*/
 	// _Detect Display a global variable containing the result of checking the display properties
 	window._DD;
 
-	// короткие ссылки на document, <head/>, для минимизации кода
-	// short links document, <head/> to minimize code
+	// короткие ссылки на document, getComputedStyle, <head/>, для минимизации кода
+	// short links document, getComputedStyle, <head/> to minimize code
 	var documentLink = document,
 		documentHeadLink = documentLink.getElementsByTagName('head')[0],
+		getComputedStyleLink = window.getComputedStyle,
 
 		// временный элемент для проверки свойств
 		// temporary element for testing properties
@@ -70,10 +71,10 @@ ______________________________________________________________________*/
 		var getDisplayStyle = 
 			// новые браузеры
 			// new browsers
-			(window.getComputedStyle)	?	getComputedStyle(elementForTesting, null).getPropertyValue(display) :
+			(getComputedStyleLink)	?	getComputedStyleLink(elementForTesting, null).getPropertyValue(display) :
 			// старые браузеры
 			// old browsers
-																	elementForTesting.currentStyle[display];
+																elementForTesting.currentStyle[display];
 
 		if (getDisplayStyle == displayVariant[i]) {
 			// если свойство примененное к элементу совпало с индексом

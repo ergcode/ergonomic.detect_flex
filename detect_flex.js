@@ -12,6 +12,7 @@ ______________________________________________________________________*/
 	var documentLink = document,
 		documentHeadLink = documentLink.getElementsByTagName('head')[0],
 		elementForTesting = documentLink.createElement('p'),
+		getComputedStyleLink = window.getComputedStyle,
 		elementForTestingStyle = elementForTesting.style,
 		display = 'display',
 		displayVariant = [
@@ -38,8 +39,8 @@ ______________________________________________________________________*/
 
 		elementForTestingStyle.cssText = display + ':' + displayVariant[i];
 		var getDisplayStyle = 
-			(window.getComputedStyle)	?	getComputedStyle(elementForTesting, null).getPropertyValue(display) :
-																	elementForTesting.currentStyle[display];
+			(getComputedStyleLink)	?	getComputedStyleLink(elementForTesting, null).getPropertyValue(display) :
+																elementForTesting.currentStyle[display];
 
 		if (getDisplayStyle == displayVariant[i]) {
 			_DD = i + 1;
