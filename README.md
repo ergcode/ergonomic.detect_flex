@@ -14,7 +14,7 @@ ABSTRACT
 -------------
 - In contrast to [Modernizr] - this code gives complete freedom. In addition, unlike Modernizr - this code accurately defines the support in outdated mobile browsers. In desktop browsers the problem is not big, as the number of browsers Chrome 20 and FF 22 to 27 is very small. 
 - This code simply defines support. What to do next with the received data in a variable `_DD` you decide for yourself. For example you can upload a CSS file to support the old browser. Or you can add a selector in the class of the element how it's done in Modernizr. 
-- 428 bytes to [detect_flex-2012_min.js], cross browser, independence from external JS libraries. 
+- 416 bytes to [detect_flex-2012_min.js], cross browser, independence from external JS libraries. 
 - I'll be glad if you could help me with a quality English translation and tips on how to reduce this code. 
 - To minimize the code, use [UglifyJS3 online] or set [UglifyJS2] 
     
@@ -76,7 +76,7 @@ _DD
 -------------
 - В отличие от [Modernizr] - данный код дает полную свободу. Кроме этого, в отличие от Modernizr - данный код точно определяет поддержку в устаревающих мобильных браузерах. В десктопных браузерах проблема не на столько большая, так как рынок браузеров Chrome 20 и FF 22-27 очень маленький. 
 - Данный код, просто определяет поддержку. Что делать дальше с полученными данными в переменной `_DD` вы решаете сами. Например вы можете загрузить CSS-файл для обеспечения поддержки старого браузера. Или вы можете добавить селектор в class элемента как это делается в Modernizr. 
-- 428 байт для [detect_flex-2012_min.js], кросс браузерность, независимость от сторонних библиотек JS. 
+- 416 байт для [detect_flex-2012_min.js], кросс браузерность, независимость от сторонних библиотек JS. 
 - Я буду рад, если вы поможете мне с качественным переводом на английский и советами как уменьшить данный код. 
 - Для минимизации кода используйте [UglifyJS3 online] или установленный [UglifyJS2]
     
