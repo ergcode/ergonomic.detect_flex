@@ -14,10 +14,9 @@ ______________________________________________________________________*/
 	// _Detect Display a global variable containing the result of checking the display properties
 	window._DD;
 
-	// короткие ссылки на window, document, <head/>, для минимизации кода
-	// short links window, document, <head/> to minimize code
-	var windowLink = window,
-		documentLink = document,
+	// короткие ссылки на document, <head/>, для минимизации кода
+	// short links document, <head/> to minimize code
+	var documentLink = document,
 		documentHeadLink = documentLink.getElementsByTagName('head')[0],
 
 		// временный элемент для проверки свойств
@@ -59,30 +58,22 @@ ______________________________________________________________________*/
 	documentHeadLink.appendChild(elementForTesting);
 
 
-	for (var i = 0, len = abilityFlexWrap.length; i < len; i++) {
-		// Это условие требует строгий порядок перечисления ключей в переменных displayVariant и abilityFlexWrap. Если значение ключа (abilityFlexWrap) не было найдено в свойствах элемента (elementForTestingStyle) => то присваиваем значение 0 для ключа displayVariant с тем же порядком. Всегда готов помочь, Ваш Капитан Очевидность
-		// This condition requires a strict order of the keys in the variables displayVariant and abilityFlexWrap. If the key value (abilityFlexWrap) was not found in the item properties (elementForTestingStyle) => then assign a value of 0 for key displayVariant with the same order. Always willing to help, Your Captain Obvious
-		if (!(abilityFlexWrap[i] in elementForTestingStyle)) displayVariant[i] = 0;
-	}
-
-
 	for (var i = 0, len = displayVariant.length; i < len; i++) {
-		// для ключа было установлено значение 0 в предыдущем for
-		// key was set to 0 in the previous for
-		if (!displayVariant[i]) continue;
+		// Это условие требует строгий порядок перечисления ключей в переменных displayVariant и abilityFlexWrap. Если ключ существует и значение ключа (abilityFlexWrap) не было найдено в свойствах элемента (elementForTestingStyle) => пропускаем цикл. Всегда готов помочь, Ваш Капитан Очевидность
+		// This condition requires a strict order of the keys in the variables and displayVariant abilityFlexWrap. If the key exists and the value of the key (abilityFlexWrap) was not found in the item properties (elementForTestingStyle) => skip loop. Always willing to help, Your Captain Obvious
+		if (abilityFlexWrap[i] && !(abilityFlexWrap[i] in elementForTestingStyle)) continue;
 
 		// такой вид присвоения свойства к элементу используется для экранирования ошибки. Ошибка может возникать когда старые версии браузеров применяют нестандартное свойство CSS
 		// this kind of attribution of properties to an element used for shielding error. Error may occur when older versions of browsers use non-standard CSS property
 		elementForTestingStyle.cssText = display + ':' + displayVariant[i];
 
-
 		var getDisplayStyle = 
 			// новые браузеры
 			// new browsers
-			(windowLink.getComputedStyle)	?	getComputedStyle(elementForTesting, null).getPropertyValue(display) :
+			(window.getComputedStyle)	?	getComputedStyle(elementForTesting, null).getPropertyValue(display) :
 			// старые браузеры
 			// old browsers
-																			elementForTesting.currentStyle[display];
+																	elementForTesting.currentStyle[display];
 
 		if (getDisplayStyle == displayVariant[i]) {
 			// если свойство примененное к элементу совпало с индексом
@@ -133,9 +124,9 @@ ______________________________________________________________________*/
 	}
 
 
-	if (!windowLink.matchMedia && !windowLink.msMatchMedia && !windowLink.CSSMediaRule) {
-		// Обратить пристальное внимание на то, что если потребуется полная эмуляция @media с помощью respond.js, то необходимо исключить !windowLink.CSSMediaRule из условия. Таким образом условие будет выполняться в IE9, сейчас оно выполняется IE8-
-		// Pay close attention to the fact that if you need full emulation of @media using respond.js it is necessary to exclude !windowLink.CSSMediaRule from the condition. Thus the condition will be executed in IE9, now it runs IE8-
+	if (!window.matchMedia && !window.msMatchMedia && !window.CSSMediaRule) {
+		// Обратить пристальное внимание на то, что если потребуется полная эмуляция @media с помощью respond.js, то необходимо исключить !window.CSSMediaRule из условия. Таким образом условие будет выполняться в IE9, сейчас оно выполняется IE8-
+		// Pay close attention to the fact that if you need full emulation of @media using respond.js it is necessary to exclude !window.CSSMediaRule from the condition. Thus the condition will be executed in IE9, now it runs IE8-
 		var load = documentLink.createElement('script');
 		load.type = 'text/javascript';
 		load.src = 'respond.js'; // https://github.com/scottjehl/Respond
