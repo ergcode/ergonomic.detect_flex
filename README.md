@@ -12,7 +12,7 @@ Simple and guaranteed method for determination support  of FLEX and BOX in any b
     
 ABSTRACT
 -------------
-- In contrast to [Modernizr] - this code gives complete freedom. In addition, unlike Modernizr - this code accurately defines the support in outdated mobile browsers. In desktop browsers the problem is not big, as the market Chrome 20 and FF 22 to 27 is very small. 
+- In contrast to [Modernizr] - this code gives complete freedom. In addition, unlike Modernizr - this code accurately defines the support in outdated mobile browsers. In desktop browsers the problem is not big, as the number of browsers Chrome 20 and FF 22 to 27 is very small.  
 - This code simply defines support. What to do next with the received data in a variable `_DD` you decide for yourself. For example you can upload a CSS file to support the old browser. Or you can add a selector in the class of the element how it's done in Modernizr. 
 - 468 bytes to [detect_flex-2012_min.js], cross browser, independence from external JS libraries. 
 - I'll be glad if you could help me with a quality English translation and tips on how to reduce this code. 
