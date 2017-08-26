@@ -10,9 +10,9 @@ ______________________________________________________________________*/
 	window._DD;
 
 	var documentLink = document,
+		getComputedStyleLink = window.getComputedStyle,
 		documentHeadLink = documentLink.getElementsByTagName('head')[0],
 		elementForTesting = documentLink.createElement('p'),
-		getComputedStyleLink = window.getComputedStyle,
 		elementForTestingStyle = elementForTesting.style,
 		display = 'display',
 		displayVariant = [
