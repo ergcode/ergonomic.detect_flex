@@ -1,0 +1,123 @@
+@charset "UTF-8";
+/** TAB === 2 space
+	*
+	*
+______________________________________________________________________*/
+
+
+
+/** Изменение алгоритма расчетов размеров элемента
+	*
+	*
+	IE8+ only!
+______________________________________________________________________*/
+
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+
+/** Eric Meyer CSS Reset v2.0 | 20110126
+	*
+	*
+	http://meyerweb.com/eric/tools/css/reset/
+______________________________________________________________________*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,  figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/** Основные свойства
+	*
+	*
+______________________________________________________________________*/
+
+html, body {
+	width: 100%;
+	height: 100%;
+	min-width: 240px;
+}
+body {
+	font-family: Tahoma, sans-serif;
+	font-size: 100%; /* 100% - 16px, 75% - 12px */
+
+	letter-spacing: normal;
+	word-spacing: normal;
+	white-space: normal;
+	word-wrap: break-word;
+	text-align: left;
+
+	background: #fff;
+}
+
+
+
+/**
+	*
+	*
+	Оформление
+______________________________________________________________________*/
+
+.head {
+	margin: 20px 10px;
+	line-height: 36px;
+}
+	.head > img {
+		display: inline-block;
+		float: left;
+		width: 36px;
+		height: 36px;
+	}
+	.head > .text {
+		display: inline-block;
+		clear: right;
+		padding: 0 0 0 10px;
+	}
+	.head a {
+		color: #C7282B;
+		text-decoration: none;
+	}
+	.head a:hover {
+		color: #A12022;
+		text-decoration: underline;
+	}
+
+
+.info {
+	padding: 10px;
+	line-height: 1.333;
+	background: #ddd;
+}
+	#detect_flex {font-weight: bold;}
+
